@@ -133,7 +133,7 @@ func (t *Terminator) Compgen(args []string, inword bool) (comp []string, err err
 	// compute a few reused vars
 	la := len(args)
 	last := ""
-	if la-1 < len(args) && la-1 >= 0 {
+	if la-1 >= 0 {
 		last = args[la-1]
 	}
 

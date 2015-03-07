@@ -81,6 +81,19 @@ func parseArgs(comp_line string, pos int) (args []string, inword bool, err error
 	return
 }
 
+//Prefix compute the completion prefix and position
+func Prefix(args []string, inword bool) (pos int, prefix string) {
+	pos = len(args)
+	if inword {
+		pos--
+		// prefix is always last
+		if pos >= 0 {
+			prefix = args[pos]
+		}
+	}
+	return
+}
+
 //read the current position from args
 func position(args []Arg, pos int) (current int) {
 	current = -1 // if the pos is not inside any word current remains -1
